@@ -25,9 +25,8 @@
 
 /* Includes */
 /* -------- */
-#include "periodic_tasks_init.h"
-#include "periodic_tasks_modules.h"
-
+#include <gsc_scheduler/periodic_tasks/periodic_tasks_init.h>
+#include <gsc_scheduler/periodic_tasks/periodic_tasks_modules.h>
 
 /**************************************************************
  *  Name                 : periodic_tasks_init_MclDrvs
@@ -36,8 +35,7 @@
  *  Return               : none
  *  Critical/explanation : no
  **************************************************************/
-void periodic_tasks_init_MclDrvs(void)
-{
+void periodic_tasks_init_MclDrvs(void){
 	
 }
 
@@ -48,9 +46,8 @@ void periodic_tasks_init_MclDrvs(void)
  *  Return               : none
  *  Critical/explanation : no
  **************************************************************/
-void periodic_tasks_init_SysDrvs(void)
-{
-	init_leds();
+void periodic_tasks_init_SysDrvs(void){
+	ADCinit_ADCconfig();
 }
 
 /**************************************************************

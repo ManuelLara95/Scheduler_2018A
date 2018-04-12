@@ -9,7 +9,7 @@
 * date_created:    July 31 2013 
 *=============================================================================*/
 /* DESCRIPTION : Header of the configuartion file of the                      */
-/* "Grandpa´s Clock Scheduler" core                                           */
+/* "Grandpaï¿½s Clock Scheduler" core                                           */
 /*============================================================================*/
 /* FUNCTION COMMENT : Header of the configurationfor the scheduler            */
 /*                                                                            */
@@ -29,8 +29,8 @@
 
 /* Includes */
 /* -------- */ 
+#include <gsc_scheduler/gsc_sch_core/gsc_sch_core.h>
 #include "stdtypedef.h"
-#include "gsc_sch_core.h"
 
 /* Exported types and constants */
 /* ---------------------------- */

@@ -30,7 +30,6 @@
 /* -------- */
 #include "stdtypedef.h"
 
-
 /* Exported functions prototypes and macros */
 /* ---------------------------------------- */
 

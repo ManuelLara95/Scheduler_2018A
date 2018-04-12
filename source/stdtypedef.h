@@ -37,9 +37,7 @@
 /* Register definitions for selected microcontroller */
 #include "MKL25Z4.h"
 
-
 /* Basic Scalar types */
-
 typedef unsigned char     	T_UBYTE;
 typedef unsigned short    	T_UWORD;
 typedef unsigned long int 	T_ULONG;

@@ -8,7 +8,7 @@
 * created_by:      MDRR
 * date_created:    July 31 2013 
 *=============================================================================*/
-/* DESCRIPTION : Core of the "Grandpa´s Clock Scheduler"                      */
+/* DESCRIPTION : Core of the "Grandpaï¿½s Clock Scheduler"                      */
 /*============================================================================*/
 /* FUNCTION COMMENT : Main scheduler file with initailization and manager     */
 /*                                                                            */
@@ -25,9 +25,9 @@
 
 /* Includes */
 /* -------- */
-#include    "gsc_sch_core.h"
-#include    "gsc_sch_core_cfg.h"
-#include    "gsc_sch_core_tick_isr.h"
+#include <gsc_scheduler/gsc_sch_core/gsc_sch_core.h>
+#include <gsc_scheduler/gsc_sch_core/gsc_sch_core_cfg.h>
+#include <gsc_scheduler/gsc_sch_core/gsc_sch_core_tick_isr.h>
 
 /* Functions macros, constants, types and datas         */
 

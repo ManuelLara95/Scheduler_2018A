@@ -203,8 +203,7 @@ void delay_time(int number){
  * ******************************************************************/
  
 
- void init_leds(void)
- {
+ void init_leds(void){
 	 
     /* 
 	 * Initialize the Red LED (PTB18)

@@ -31,7 +31,12 @@
 /*============================================================================*/
 //#include "MyApplication.h"
 //#include "MyLowLayerDriver.h"
-#include "../app/RGB_LEDs.h"
+
+#include "app/RGB_LEDs.h"
+#include "source/ADCinit.h"
+#include "source/stdtypedef.h"
+#include "utilities/fsl_debug_console.h"
+
 /*============================================================================*/
 
 #endif

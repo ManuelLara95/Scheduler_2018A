@@ -8,7 +8,7 @@
 * created_by:      MDRR
 * date_created:    July 31 2013 
 *=============================================================================*/
-/* DESCRIPTION : Tick source file for the "Grandpa´s Clock Scheduler"         */
+/* DESCRIPTION : Tick source file for the "Grandpaï¿½s Clock Scheduler"         */
 /*============================================================================*/
 /* FUNCTION COMMENT : Tick generation source file                             */
 /*                                                                            */
@@ -25,7 +25,7 @@
 
 /* Includes */
 /* -------- */
-#include "gsc_sch_core_tick_isr.h"
+#include <gsc_scheduler/gsc_sch_core/gsc_sch_core_tick_isr.h>
 
 /* Functions macros, constants, types and datas         */
 /* ---------------------------------------------------- */
