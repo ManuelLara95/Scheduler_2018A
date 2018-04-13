@@ -10,5 +10,7 @@
 
 extern T_UWORD ADCinit_getADCvalue(ADC_Type *base, uint32_t channelGroup);
 extern void ADCinit_ADCconfig(void);
+extern T_UBYTE ADCinit_setOperationMODE(T_UWORD ADC_VALUE);
+
 
 #endif /* ADCINIT_H_ */

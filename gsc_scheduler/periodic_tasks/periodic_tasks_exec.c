@@ -6,10 +6,11 @@
 * created_by:      MDRR
 * date_created:    July 31 2013 */
 
-/* Includes */
+/********************* INCLUSIONES ******************** */
 #include <gsc_scheduler/periodic_tasks/periodic_tasks_exec.h>
 #include <gsc_scheduler/periodic_tasks/periodic_tasks_modules.h>
 
+/********************* DEFINICIONES ******************** */
 #define	CANAL0	0U
 
 /**************************************************************
@@ -48,7 +49,7 @@ void periodic_tasks_exec_10tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_20tks(void){
-
+	PWMinit_PWMtestRoutine();
 }
 
 /**************************************************************
@@ -61,7 +62,8 @@ void periodic_tasks_exec_20tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_50tks(void){
-
+//	PWMinit_PWMnormalDecrease();
+//	DELAY_delay(40);
 }
 
 /**************************************************************
@@ -74,7 +76,8 @@ void periodic_tasks_exec_50tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_100tks(void){
-
+//	PWMinit_PWMhighDecrease();
+//	DELAY_delay(40);
 }
 
 /**************************************************************
@@ -101,6 +104,5 @@ void periodic_tasks_exec_500tks(void) {
 **************************************************************/
 void periodic_tasks_exec_1Mtks(void){
 	T_UWORD ADC_Value = ADCinit_getADCvalue(ADC0, CANAL0);
-//	ADCinit_getADCvalue();
-	PRINTF("%dd\n", ADC_Value);
+//	PRINTF("%dd\n", ADC_Value);
 }
