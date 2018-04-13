@@ -48,6 +48,7 @@ void periodic_tasks_init_MclDrvs(void){
  **************************************************************/
 void periodic_tasks_init_SysDrvs(void){
 	ADCinit_ADCconfig();
+	PWMinit_PWMconfig();
 }
 
 /**************************************************************

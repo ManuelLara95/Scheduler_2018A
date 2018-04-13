@@ -45,7 +45,6 @@
 volatile unsigned int sys_tick_counter = 0;
 
 // Code
-
 /*!
  * @brief Main function
  */

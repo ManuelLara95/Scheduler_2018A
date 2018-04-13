@@ -34,6 +34,7 @@
 
 #include "app/RGB_LEDs.h"
 #include "source/ADCinit.h"
+#include "source/PWMinit.h"
 #include "source/stdtypedef.h"
 #include "utilities/fsl_debug_console.h"
 
