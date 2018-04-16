@@ -76,13 +76,11 @@ void BOARD_InitPins(void) {
 
   PORT_SetPinMux(PORTA, PIN1_IDX, kPORT_MuxAlt2);				/* PORTA1 (pin 27) is configured as UART0_RX */
   PORT_SetPinMux(PORTA, PIN2_IDX, kPORT_MuxAlt2);				/* PORTA2 (pin 28) is configured as UART0_TX */
-
   PORT_SetPinMux(PORTB, PIN18_IDX, kPORT_MuxAlt3);				/* PORTB18 (pin 53) is configured as TPM2_CH0 */
   PORT_SetPinMux(PORTB, PIN19_IDX, kPORT_MuxAlt3);				/* PORTB19 (pin 54) is configured as TPM2_CH1 */
-
   PORT_SetPinMux(PORTD, PIN1_IDX, kPORT_MuxAlt3);				/* PORTB19 (pin 54) is configured as TPM2_CH1 */
-
   PORT_SetPinMux(PORTE, PIN20_IDX, kPORT_PinDisabledOrAnalog);	/* PORTE20 (pin 13) is configured as ADC0_DP0 */
+
   SIM->SOPT5 = ((SIM->SOPT5 &
     (~(SIM_SOPT5_UART0TXSRC_MASK | SIM_SOPT5_UART0RXSRC_MASK)))	/* Mask bits to zero which are setting */
       | SIM_SOPT5_UART0TXSRC(SOPT5_UART0TXSRC_UART_TX)			/* UART0 transmit data source select: UART0_TX pin */

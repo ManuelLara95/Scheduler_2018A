@@ -29,7 +29,6 @@
 /********************* GENERAL FUNCTIONS ******************** */
 extern void PWMinit_PWMsetconfig(void);
 extern void PWMinit_PWMtestRoutine(void);
-extern void PWMinit_PWMset(void);
 
 /********************* TEMPERATURE CHANGE ACTIONS ******************** */
 extern void PWMinit_PWM_setNORMALmode(tpm_chnl_t TPM_NUMERODECANAL);

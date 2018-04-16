@@ -8,6 +8,7 @@
 #include "source/MAL/PWMmiddle.h"
 
 T_UBYTE PWMmiddle_setOperationMODE(T_UWORD ADC_VALUE){
+	assert(ADC_VALUE);
 	if( (ADC_VALUE < MAXsafeLimit) && (ADC_VALUE > MINsafeLimit) )
 		{
 			PWMinit_PWM_setNORMALmode(CHNL0);

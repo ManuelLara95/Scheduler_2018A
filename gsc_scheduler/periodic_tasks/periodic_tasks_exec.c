@@ -15,6 +15,7 @@ T_UWORD ADC_Value = 0;
 T_UBYTE DANGER_counter = 0;
 bool DANGER_flag = false;
 enum ModoDeOperacion MODOactual;
+#define	CANAL0	0U
 
 /**************************************************************
 *  Name                 : periodic_tasks_exec_5tks
@@ -52,6 +53,7 @@ void periodic_tasks_exec_10tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_20tks(void){
+	PWMinit_PWMtestRoutine();
 }
 
 /**************************************************************
@@ -64,7 +66,8 @@ void periodic_tasks_exec_20tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_50tks(void){
-
+//	PWMinit_PWMnormalDecrease();
+//	DELAY_delay(40);
 }
 
 /**************************************************************
@@ -77,6 +80,8 @@ void periodic_tasks_exec_50tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_100tks(void){
+//	PWMinit_PWMhighDecrease();
+//	DELAY_delay(40);
 }
 
 /**************************************************************
@@ -114,4 +119,5 @@ void periodic_tasks_exec_1Mtks(void){
 		}
 	else
 		DANGER_counter = 0;
+//	PRINTF("%dd\n", ADC_Value);
 }
