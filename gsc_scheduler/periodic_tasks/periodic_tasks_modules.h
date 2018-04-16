@@ -32,11 +32,17 @@
 //#include "MyApplication.h"
 //#include "MyLowLayerDriver.h"
 
+#include "HAL/ADCconfig.h"
+#include "HAL/PWMconfig.h"
+#include "MAL/ADCmiddle.h"
+#include "MAL/PWMmiddle.h"
+
+#include "utilities/delay.h"
 #include "app/RGB_LEDs.h"
-#include "source/ADCinit.h"
-#include "source/PWMinit.h"
 #include "source/stdtypedef.h"
 #include "utilities/fsl_debug_console.h"
+
+#define INITIALIZATION_DELAY	500
 
 /*============================================================================*/
 

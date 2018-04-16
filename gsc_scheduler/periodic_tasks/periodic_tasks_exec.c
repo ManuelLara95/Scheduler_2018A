@@ -11,7 +11,10 @@
 #include <gsc_scheduler/periodic_tasks/periodic_tasks_modules.h>
 
 /********************* DEFINICIONES ******************** */
-#define	CANAL0	0U
+T_UWORD ADC_Value = 0;
+T_UBYTE DANGER_counter = 0;
+bool DANGER_flag = false;
+enum ModoDeOperacion MODOactual;
 
 /**************************************************************
 *  Name                 : periodic_tasks_exec_5tks
@@ -36,7 +39,7 @@ void periodic_tasks_exec_5tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_10tks(void){
-
+	ADC_Value = ADCinit_getADCvalue(ADC0, CHNL0);
 }
 
 /**************************************************************
@@ -49,7 +52,6 @@ void periodic_tasks_exec_10tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_20tks(void){
-	PWMinit_PWMtestRoutine();
 }
 
 /**************************************************************
@@ -62,8 +64,7 @@ void periodic_tasks_exec_20tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_50tks(void){
-//	PWMinit_PWMnormalDecrease();
-//	DELAY_delay(40);
+
 }
 
 /**************************************************************
@@ -76,8 +77,6 @@ void periodic_tasks_exec_50tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_100tks(void){
-//	PWMinit_PWMhighDecrease();
-//	DELAY_delay(40);
 }
 
 /**************************************************************
@@ -89,8 +88,8 @@ void periodic_tasks_exec_100tks(void){
 *  Return               : none
 *  Critical/explanation : no
 **************************************************************/
-void periodic_tasks_exec_500tks(void) {
-
+void periodic_tasks_exec_500tks(void){
+	MODOactual = PWMmiddle_setOperationMODE(ADC_Value);
 }
 
 /**************************************************************
@@ -103,6 +102,16 @@ void periodic_tasks_exec_500tks(void) {
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_1Mtks(void){
-	T_UWORD ADC_Value = ADCinit_getADCvalue(ADC0, CANAL0);
-//	PRINTF("%dd\n", ADC_Value);
+	ADC_Value = ((3300*ADC_Value*100)/4095);
+	PRINTF("%dd\n", ADC_Value);
+	PRINTF("%dd\n", MODOactual);
+
+	if(MODOactual == DECREMENTO_RAPIDO || MODOactual == INCREMENTO_RAPIDO)
+		{
+			DANGER_counter++;
+			if(DANGER_counter >= 30u)
+				MODOactual = MODO_SEGURO;
+		}
+	else
+		DANGER_counter = 0;
 }

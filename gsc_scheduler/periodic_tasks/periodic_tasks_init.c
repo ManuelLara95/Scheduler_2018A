@@ -47,8 +47,8 @@ void periodic_tasks_init_MclDrvs(void){
  *  Critical/explanation : no
  **************************************************************/
 void periodic_tasks_init_SysDrvs(void){
-	ADCinit_ADCconfig();
-	PWMinit_PWMconfig();
+	ADCinit_ADCsetconfig();
+	PWMinit_PWMsetconfig();
 }
 
 /**************************************************************

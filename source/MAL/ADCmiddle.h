@@ -1,0 +1,14 @@
+/*
+ * ADCmiddle.h
+ *
+ *  Created on: Apr 15, 2018
+ *      Author: Manuel
+ */
+
+#ifndef MAL_ADCMIDDLE_H_
+#define MAL_ADCMIDDLE_H_
+
+#include "source/HAL/ADCconfig.h"
+#include "source/HAL/PWMconfig.h"
+
+#endif /* MAL_ADCMIDDLE_H_ */
