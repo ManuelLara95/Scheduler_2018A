@@ -20,7 +20,7 @@
 #define TPM_DIRECCIONBASE 		TPM2
 
 #define NOPOWER			0u
-#define HALFofPOWER		25u
+#define HALFofPOWER		50u
 #define	FULLPOWER		100u
 /* Get source clock for TPM driver */
 #define TPM_CLOCKPRINCIPAL 		CLOCK_GetFreq(kCLOCK_PllFllSelClk)

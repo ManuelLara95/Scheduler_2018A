@@ -36,6 +36,7 @@
 #include "HAL/PWMconfig.h"
 #include "MAL/ADCmiddle.h"
 #include "MAL/PWMmiddle.h"
+#include "MAL/SafetyActions.h"
 
 #include "utilities/delay.h"
 #include "app/RGB_LEDs.h"

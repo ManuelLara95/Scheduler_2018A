@@ -11,4 +11,6 @@
 #include "source/HAL/ADCconfig.h"
 #include "source/HAL/PWMconfig.h"
 
+extern T_UBYTE ADCmiddle_getTemperature(void);
+
 #endif /* MAL_ADCMIDDLE_H_ */

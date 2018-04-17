@@ -50,6 +50,7 @@ typedef enum {
     TASK_20TKS,
     TASK_50TKS,
     TASK_100TKS,
+	TASK_200TKS,
     TASK_500TKS,
     TASK_1MTKS,
     /* Number of Managers/Applications */

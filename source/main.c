@@ -37,10 +37,6 @@
 #include "clock_config.h"
 #include "core_cm0plus.h"
 
-// Definitions
-#define LED_INIT() LED_RED_INIT(LOGIC_LED_ON)
-#define LED_TOGGLE() LED_RED_TOGGLE()
-
 // Variables
 volatile unsigned int sys_tick_counter = 0;
 

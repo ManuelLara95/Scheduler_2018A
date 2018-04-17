@@ -13,9 +13,8 @@
 /********************* DEFINICIONES ******************** */
 T_UWORD ADC_Value = 0;
 T_UBYTE DANGER_counter = 0;
-bool DANGER_flag = false;
+bool SAFEMODE_flag = false;
 enum ModoDeOperacion MODOactual;
-#define	CANAL0	0U
 
 /**************************************************************
 *  Name                 : periodic_tasks_exec_5tks
@@ -40,7 +39,8 @@ void periodic_tasks_exec_5tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_10tks(void){
-	ADC_Value = ADCinit_getADCvalue(ADC0, CHNL0);
+	if(!SAFEMODE_flag)
+		ADC_Value = ADCmiddle_getTemperature();
 }
 
 /**************************************************************
@@ -53,7 +53,7 @@ void periodic_tasks_exec_10tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_20tks(void){
-	PWMinit_PWMtestRoutine();
+
 }
 
 /**************************************************************
@@ -66,8 +66,7 @@ void periodic_tasks_exec_20tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_50tks(void){
-//	PWMinit_PWMnormalDecrease();
-//	DELAY_delay(40);
+
 }
 
 /**************************************************************
@@ -80,8 +79,21 @@ void periodic_tasks_exec_50tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_100tks(void){
-//	PWMinit_PWMhighDecrease();
-//	DELAY_delay(40);
+
+}
+
+/**************************************************************
+*  Name                 : periodic_tasks_exec_500tks
+*	ID					 : TASK_500TKS
+*  Description          : Container for functionality that is
+					   executed periodically.
+*  Parameters           : none
+*  Return               : none
+*  Critical/explanation : no
+**************************************************************/
+void periodic_tasks_exec_200tks(void){
+	if(SAFEMODE_flag)
+		SAFEMODE_flag = SafetyActions_SafetyConfig();
 }
 
 /**************************************************************
@@ -94,6 +106,7 @@ void periodic_tasks_exec_100tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_500tks(void){
+	if(!SAFEMODE_flag)
 	MODOactual = PWMmiddle_setOperationMODE(ADC_Value);
 }
 
@@ -107,17 +120,17 @@ void periodic_tasks_exec_500tks(void){
 *  Critical/explanation : no
 **************************************************************/
 void periodic_tasks_exec_1Mtks(void){
-	ADC_Value = ((3300*ADC_Value*100)/4095);
-	PRINTF("%dd\n", ADC_Value);
-	PRINTF("%dd\n", MODOactual);
+	if(!SAFEMODE_flag)
+	{
+		PRINTF("ADC: %d C\n", ADC_Value);
+		PRINTF("MODO: %d\n", MODOactual);
+		PRINTF("Counter: %d\n\n", DANGER_counter);
+	}
 
-	if(MODOactual == DECREMENTO_RAPIDO || MODOactual == INCREMENTO_RAPIDO)
-		{
-			DANGER_counter++;
-			if(DANGER_counter >= 30u)
-				MODOactual = MODO_SEGURO;
-		}
-	else
-		DANGER_counter = 0;
-//	PRINTF("%dd\n", ADC_Value);
+	if(!SAFEMODE_flag)
+	{
+		DANGER_counter = SafetyActions_SafetyCounter(MODOactual);
+		SAFEMODE_flag = SafetyActions_SafetyChecker(DANGER_counter);
+
+	}
 }

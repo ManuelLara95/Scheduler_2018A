@@ -22,11 +22,11 @@ void PWMinit_PWMsetconfig(void){
 
     /* Configure tpm params with frequency 24kHZ */
     TPM_PARAMETRO[0].chnlNumber = (tpm_chnl_t)TPM_NUMEROdeCANAL0;
-    TPM_PARAMETRO[0].level = kTPM_LowTrue;
+    TPM_PARAMETRO[0].level = kTPM_HighTrue;
     TPM_PARAMETRO[0].dutyCyclePercent = DutyCycle;
 
     TPM_PARAMETRO[1].chnlNumber = (tpm_chnl_t)TPM_NUMEROdeCANAL1;
-	TPM_PARAMETRO[1].level = kTPM_LowTrue;
+	TPM_PARAMETRO[1].level = kTPM_HighTrue;
 	TPM_PARAMETRO[1].dutyCyclePercent = DutyCycle;
 
     CLOCK_SetTpmClock(1u);				/* Select the clock source for the TPM counter as kCLOCK_PllFllSelClk */

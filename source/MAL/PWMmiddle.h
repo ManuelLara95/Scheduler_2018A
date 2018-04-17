@@ -12,18 +12,27 @@
 #include "source/HAL/PWMconfig.h"
 
 /********************* DEFINICIONES ******************** */
-#define TOLERANCIAincrementoNORMAL		62		// +5°
-#define TOLERANCIAincrementoRAPIDO		124		// +10°
+#define TOLERANCIAincrementoNORMAL		10		// +10°
+#define TOLERANCIAincrementoRAPIDO		20		// +50°
 
-#define TOLERANCIAdecrementoNORMAL		62		// -5°
-#define TOLERANCIAdecrementoRAPIDO		124		// -10°
-#define VALORDETEMPERATURAbase			335		// A 27°
+#define TOLERANCIAdecrementoNORMAL		3		// -3°
+#define TOLERANCIAdecrementoRAPIDO		5		// -5°
+#define VALORDETEMPERATURAbase			26
 
 #define MAXsafeLimit		VALORDETEMPERATURAbase + TOLERANCIAincrementoNORMAL
 #define highDANGERLimit		VALORDETEMPERATURAbase + TOLERANCIAincrementoRAPIDO
 #define MINsafeLimit		VALORDETEMPERATURAbase - TOLERANCIAdecrementoNORMAL
 #define lowDANGERlimit		VALORDETEMPERATURAbase - TOLERANCIAdecrementoRAPIDO
 
+/********************* DECLARACIONES ******************** */
+enum ModoDeOperacion{
+	MODO_NORMAL,
+	INCREMENTO_NORMAL,
+	INCREMENTO_RAPIDO,
+	DECREMENTO_NORMAL,
+	DECREMENTO_RAPIDO,
+	MODO_SEGURO
+};
 /********************* PROTOTIPOS ******************** */
 extern T_UBYTE PWMmiddle_setOperationMODE(T_UWORD ADC_VALUE);
 

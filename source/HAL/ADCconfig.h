@@ -24,16 +24,6 @@
 #define CHNL0	kTPM_Chnl_0
 #define	CHNL1	kTPM_Chnl_1
 
-/********************* DECLARACIONES ******************** */
-enum ModoDeOperacion{
-	MODO_NORMAL,
-	INCREMENTO_NORMAL,
-	INCREMENTO_RAPIDO,
-	DECREMENTO_NORMAL,
-	DECREMENTO_RAPIDO,
-	MODO_SEGURO
-};
-
 /********************* PROTOTIPADO ******************** */
 extern T_UWORD ADCinit_getADCvalue(ADC_Type *base, uint32_t channelGroup);
 extern void ADCinit_ADCsetconfig(void);

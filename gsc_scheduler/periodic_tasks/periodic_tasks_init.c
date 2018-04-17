@@ -117,6 +117,19 @@ void periodic_tasks_init_SysDrvs(void){
  }
  
  /**************************************************************
+ *  Name                 : periodic_tasks_init_task_200tks
+ *  Description          : Container for initialization of functionality that is
+                           executed periodically
+ *  Parameters           : none
+ *  Return               : none
+ *  Critical/explanation : no
+ **************************************************************/
+ void periodic_tasks_init_task_200tks(void)
+ {
+
+ }
+
+ /**************************************************************
  *  Name                 : periodic_tasks_init_task_500tks
  *  Description          : Container for initialization of functionality that is
                            executed periodically
